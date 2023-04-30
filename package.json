@@ -1,0 +1,25 @@
+{
+  "name": "chainlink-spring-2023",
+  "version": "1.0.0",
+  "private": true,
+  "main": "index.js",
+  "repository": "git@github.com:MyDigiHealth/core.git",
+  "author": "Yash Goyal <yashgo0018@gmail.com>",
+  "license": "MIT",
+  "lint-staged": {
+    "**/*": "prettier --write --ignore-unknown"
+  },
+  "scripts": {
+    "frontend:dev": "yarn workspace frontend dev",
+    "backend:dev": "yarn workspace backend dev",
+    "check": "prettier --check .",
+    "format": "prettier --write ."
+  },
+  "devDependencies": {
+    "prettier": "2.8.8"
+  },
+  "workspaces": [
+    "frontend",
+    "backend"
+  ]
+}
