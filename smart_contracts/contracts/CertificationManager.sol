@@ -4,13 +4,13 @@ pragma solidity ^0.8.9;
 import "@openzeppelin/contracts/security/Pausable.sol";
 import "@openzeppelin/contracts/access/AccessControl.sol";
 
+enum MedicalProfessionalType {
+    doctor,
+    drogStore
+}
+
 /// @custom:security-contact contact@yashgoyal.dev
 contract CertificationManager is Pausable, AccessControl {
-    enum MedicalProfessionalType {
-        doctor,
-        drogStore
-    }
-
     bytes32 public constant PAUSER_ROLE = keccak256("PAUSER_ROLE");
     bytes32 public constant MEDICAL_VALIDATION_AUTHORITY_ROLE =
         keccak256("MEDICAL_VALIDATION_AUTHORITY_ROLE");
