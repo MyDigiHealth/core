@@ -9,3 +9,79 @@ datasource db {
   provider = "mysql"
   url      = env("DATABASE_URL")
 }
+
+enum UserType {
+  unregistered
+  patient
+  doctor
+  drugStore
+  validator
+}
+
+model User {
+  address String    @id
+  name    String?
+  dob     DateTime?
+  nonce   String
+  type    UserType  @default(unregistered)
+
+  doctor    Doctor?
+  patient   Patient?
+  drugStore DrugStore?
+  validator Validator?
+  admin     Admin?
+}
+
+model Doctor {
+  address  String  @id
+  verified Boolean @default(false)
+  user     User    @relation(fields: [address], references: [address], onDelete: Cascade)
+  document String
+}
+
+model DrugStore {
+  address  String  @id
+  verified Boolean @default(false)
+  user     User    @relation(fields: [address], references: [address], onDelete: Cascade)
+  document String
+}
+
+model Patient {
+  address  String  @id
+  verified Boolean @default(false)
+  user     User    @relation(fields: [address], references: [address], onDelete: Cascade)
+}
+
+model Validator {
+  address String @id
+  user    User   @relation(fields: [address], references: [address], onDelete: Cascade)
+}
+
+model Admin {
+  address String @id
+  user    User   @relation(fields: [address], references: [address], onDelete: Cascade)
+}
+
+model Medicine {
+  medicineId  Int     @id @default(autoincrement())
+  name        String
+  description String?
+}
+
+model PrescriptionMedicine {
+  medicineId     Int
+  prescriptionId Int
+  doses          Int    @default(1)
+  description    String
+  days           String
+
+  @@id([medicineId, prescriptionId])
+}
+
+model Prescription {
+  prescriptionId Int    @id @default(autoincrement())
+  doctorAddress  String
+  patientAddress String
+  description    String
+  generatedDoc   String
+}
