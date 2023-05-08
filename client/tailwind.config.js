@@ -22,6 +22,9 @@ export default {
       borderRadius: {
         inherit: "inherit",
       },
+      transitionDuration: {
+        inherit: "inherit",
+      },
     },
   },
   plugins: [],

@@ -21,3 +21,18 @@
     filter: hue-rotate(359.99deg);
   }
 }
+
+@keyframes bouncy-spin {
+  0% {
+    scale: 1;
+    rotate: 0deg;
+  }
+  50% {
+    scale: 0.5;
+    rotate: 361deg;
+  }
+  100% {
+    scale: 1;
+    rotate: 719deg;
+  }
+}

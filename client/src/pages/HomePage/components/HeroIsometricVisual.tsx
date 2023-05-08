@@ -8,6 +8,7 @@ const layers: layersType = [
   { img: "bg-2", type: "BG" },
   { img: "fg-1", type: "FG" },
   { img: "bg-1", type: "BG" },
+  { img: "fg-4", type: "FG" },
   { img: "fg-2", type: "FG" },
   { img: "bg-3", type: "BG" },
   { img: "fg-3", type: "FG" },
@@ -20,7 +21,7 @@ const config = {
   bgDuration: 2000,
   fgDuration: 3000,
   bgDelay: 50,
-  fgDelayStep: 200,
+  fgDelayStep: 380,
   floatDuration: 12345,
 };
 
@@ -31,7 +32,7 @@ export default function HeroIsometricVisual() {
     setInterval(() => {
       setFlag(true);
     }, 50);
-  });
+  }, []);
 
   return (
     <div
@@ -45,7 +46,11 @@ export default function HeroIsometricVisual() {
         }ms infinite`,
       }}
     >
-      <img src="/images/hero-city/layers/cover.webp" className="opacity-0" />
+      <img
+        src="/images/hero-city/layers/cover.webp"
+        className="opacity-0"
+        draggable={false}
+      />
 
       <img
         src="/images/hero-city/layers/cover.webp"
@@ -55,6 +60,7 @@ export default function HeroIsometricVisual() {
           opacity: flag ? "100%" : "0%",
           transitionDelay: `${config.bgDelay + config.bgDuration}ms`,
         }}
+        draggable={false}
       />
 
       {layers.map((item, index) => (
@@ -69,7 +75,7 @@ export default function HeroIsometricVisual() {
             }ms`,
             transitionDelay: `${
               item.type === "FG"
-                ? config.bgDuration + 100 + (index + 1) * config.fgDelayStep
+                ? config.bgDuration + 100 + index * config.fgDelayStep
                 : config.bgDelay
             }ms`,
             transform: flag
@@ -78,6 +84,7 @@ export default function HeroIsometricVisual() {
                   item.type === "BG" ? "translateX(100%)" : "translateY(100%)"
                 }`,
           }}
+          draggable={false}
         />
       ))}
     </div>

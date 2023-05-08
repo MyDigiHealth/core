@@ -42,14 +42,16 @@ export default function Navbar() {
         transform: `translateY(${scrollDirection === "DOWN" ? -100 : 0}%)`,
       }}
     >
-      <div className="flex gap-x-2 items-center">
-        <img
-          src="/logo.png"
-          alt="myDigiHealth logo"
-          className="aspect-square h-16"
-        />
+      <Link to="/" className="flex gap-x-2 items-center">
+        <div className="group">
+          <img
+            src="/logo.png"
+            alt="myDigiHealth logo"
+            className="aspect-square h-16 group-hover:animate-[bouncy-spin_800ms]"
+          />
+        </div>
         <h1 className="text-2xl text-primary font-semibold">myDigiHealth</h1>
-      </div>
+      </Link>
       <div className="flex gap-x-10 items-center">
         {navItems.map((item) => (
           <Link to={item.to} className="text-front text-opacity-75">
