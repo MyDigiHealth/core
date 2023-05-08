@@ -53,8 +53,8 @@ export default function Navbar() {
         <h1 className="text-2xl text-primary font-semibold">myDigiHealth</h1>
       </Link>
       <div className="flex gap-x-10 items-center">
-        {navItems.map((item) => (
-          <Link to={item.to} className="text-front text-opacity-75">
+        {navItems.map((item, i) => (
+          <Link to={item.to} key={i} className="text-front text-opacity-75">
             {item.title}
           </Link>
         ))}
