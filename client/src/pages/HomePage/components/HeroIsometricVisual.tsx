@@ -21,9 +21,8 @@ const config = {
   fgDuration: 3000,
   bgDelay: 50,
   fgDelayStep: 200,
-  floatDuration: 12345
+  floatDuration: 12345,
 };
-
 
 export default function HeroIsometricVisual() {
   const [flag, setFlag] = useState(false);
@@ -35,10 +34,17 @@ export default function HeroIsometricVisual() {
   });
 
   return (
-    <div className="w-full relative overflow-hidden pointer-events-none"
-    style={{
-      animation : `hero-city-float ${config.floatDuration}ms ease-in-out ${config.bgDelay + config.bgDuration + config.fgDuration + layers.length * config.fgDelayStep}ms infinite` 
-    }}>
+    <div
+      className="w-full relative overflow-hidden pointer-events-none"
+      style={{
+        animation: `hero-city-float ${config.floatDuration}ms ease-in-out ${
+          config.bgDelay +
+          config.bgDuration +
+          config.fgDuration +
+          layers.length * config.fgDelayStep
+        }ms infinite`,
+      }}
+    >
       <img src="/images/hero-city/layers/cover.webp" className="opacity-0" />
 
       <img
@@ -55,7 +61,7 @@ export default function HeroIsometricVisual() {
         <img
           src={item.img}
           className="absolute top-0 left-0"
-          key = {index}
+          key={index}
           style={{
             zIndex: index,
             transitionDuration: `${

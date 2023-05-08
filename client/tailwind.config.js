@@ -19,9 +19,9 @@ export default {
         raleway: "Raleway, sans-serif",
         poppins: "Poppins, sans-serif",
       },
-      borderRadius:{
-        inherit:"inherit"
-      }
+      borderRadius: {
+        inherit: "inherit",
+      },
     },
   },
   plugins: [],
