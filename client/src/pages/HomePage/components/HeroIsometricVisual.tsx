@@ -33,7 +33,19 @@ export default function HeroIsometricVisual() {
   });
 
   return (
-    <div className="w-full h-full relative overflow-hidden">
+    <div className="w-full relative overflow-hidden">
+      <img src="/images/hero-city/layers/cover.png" className="opacity-0" />
+
+      <img
+        src="/images/hero-city/layers/cover.png"
+        className="absolute top-0 left-0"
+        style={{
+          zIndex: layers.length + 5,
+          opacity: flag ? "100%" : "0%",
+          transitionDelay: `${config.bgDelay + config.bgDuration}ms`,
+        }}
+      />
+
       {layers.map((item, index) => (
         <img
           src={item.img}
