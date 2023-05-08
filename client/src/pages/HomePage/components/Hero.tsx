@@ -1,8 +1,12 @@
+import HeroIsometricVisual from "./HeroIsometricVisual";
+
 export default function Hero() {
   return (
-    <section className="h-screen p-page py-12 flex flex-col items-center">
-      <div className="basis-1/2"></div>
-      <div className="basis-1/2"></div>
+    <section className="h-screen pl-page py-12 flex items-center">
+      <div className="flex-1">w</div>
+      <div className="basis-[60%] h-full flex flex-col justify-center">
+        <HeroIsometricVisual />
+      </div>
     </section>
   );
 }

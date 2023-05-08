@@ -12,4 +12,7 @@
   .p-page {
     @apply px-[3vw];
   }
+  .pl-page {
+    @apply pl-[3vw];
+  }
 }
