@@ -14,7 +14,7 @@ const layers: layersType = [
   { img: "bg-0", type: "BG" },
 ];
 
-layers.forEach((i) => (i.img = `/images/hero-city/layers/${i.img}.png`));
+layers.forEach((i) => (i.img = `/images/hero-city/layers/${i.img}.webp`));
 
 const config = {
   bgDuration: 2000,
@@ -22,6 +22,7 @@ const config = {
   bgDelay: 50,
   fgDelayStep: 200,
 };
+
 
 export default function HeroIsometricVisual() {
   const [flag, setFlag] = useState(false);
@@ -34,10 +35,10 @@ export default function HeroIsometricVisual() {
 
   return (
     <div className="w-full relative overflow-hidden">
-      <img src="/images/hero-city/layers/cover.png" className="opacity-0" />
+      <img src="/images/hero-city/layers/cover.webp" className="opacity-0" />
 
       <img
-        src="/images/hero-city/layers/cover.png"
+        src="/images/hero-city/layers/cover.webp"
         className="absolute top-0 left-0"
         style={{
           zIndex: layers.length + 5,
@@ -50,6 +51,7 @@ export default function HeroIsometricVisual() {
         <img
           src={item.img}
           className="absolute top-0 left-0"
+          key = {index}
           style={{
             zIndex: index,
             transitionDuration: `${

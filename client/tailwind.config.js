@@ -8,12 +8,12 @@ export default {
         widescreen: { min: "780px" },
       },
       colors: {
-        primary: "#26c0f7",
+        primary: "#086e96",
         secondary: "",
-        background: "",
+        background: "#ffffff",
         foreground: "#a9a9a9",
         front: "#1a1a1a",
-        back: "",
+        back: "#ffffff",
       },
       fontFamily: {
         raleway: "Raleway, sans-serif",
