@@ -4,11 +4,10 @@ import { ethers } from "ethers";
 dotenv.config();
 
 export const PORT = Number(process.env.PORT || "8000");
-export const ORGANIZATION_CONTRACT_ADDRESS =
-  process.env.ORGANIZATION_CONTRACT_ADDRESS || "";
-export const DEAL_CONTRACT_ADDRESS = process.env.DEAL_CONTRACT_ADDRESS || "";
-export const LOGGER_CONTRACT_ADDRESS =
-  process.env.LOGGER_CONTRACT_ADDRESS || "";
+export const CERTIFICATION_CONTRACT_ADDRESS =
+  process.env.CERTIFICATION_CONTRACT_ADDRESS || "";
+export const PRESCRIPTION_CONTRACT_ADDRESS =
+  process.env.PRESCRIPTION_CONTRACT_ADDRESS || "";
 export const WEB3_RPC_URI = process.env.WEB3_RPC_URI || "";
 export const SIGNER_PRIVATE_KEY = process.env.SIGNER_PRIVATE_KEY || "";
 export const LIGHTHOUSE_API_KEY = process.env.LIGHTHOUSE_API_KEY || "";
@@ -20,11 +19,11 @@ export const MIN_BLOCK = Number(process.env.MIN_BLOCK || "0");
 
 export const provider = new ethers.providers.WebSocketProvider(WEB3_RPC_URI);
 
-export function getDealContractDomain() {
-  return {
-    name: "Deal Controller",
-    version: "1",
-    chainId: CHAIN_ID,
-    verifyingContract: DEAL_CONTRACT_ADDRESS,
-  };
-}
+// export function getDealContractDomain() {
+//   return {
+//     name: "Deal Controller",
+//     version: "1",
+//     chainId: CHAIN_ID,
+//     verifyingContract: DEAL_CONTRACT_ADDRESS,
+//   };
+// }
