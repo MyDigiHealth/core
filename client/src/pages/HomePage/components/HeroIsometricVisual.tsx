@@ -75,7 +75,7 @@ export default function HeroIsometricVisual() {
             }ms`,
             transitionDelay: `${
               item.type === "FG"
-                ? config.bgDuration + 100 + index * config.fgDelayStep
+                ? config.bgDuration - 500 + index * config.fgDelayStep
                 : config.bgDelay
             }ms`,
             transform: flag
