@@ -36,3 +36,12 @@
     rotate: 719deg;
   }
 }
+
+@keyframes grow {
+  from {
+    scale: 0;
+  }
+  to {
+    scale: 1;
+  }
+}

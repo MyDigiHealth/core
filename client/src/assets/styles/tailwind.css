@@ -15,6 +15,9 @@
   .pl-page {
     @apply pl-[3vw];
   }
+  .pr-page {
+    @apply pr-[3vw];
+  }
 
   .btn-1 {
     @apply bg-primary text-back duration-300 border-2 border-primary outline outline-primary outline-offset-[-2px] hover:bg-background hover:text-primary hover:outline-offset-[-8px];

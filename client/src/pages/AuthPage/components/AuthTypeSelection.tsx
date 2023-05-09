@@ -4,15 +4,18 @@ interface AuthTypeSelectionProps {
 
 const types = [
   {
+    type: 0,
     title: "User or Patient",
     imageUrl: "/images/patient-representation.png",
   },
   {
+    type: 1,
     title: "Medical Professional",
     imageUrl: "/images/doctor-representation.png",
   },
   {
-    title: "Medical Shop Owner",
+    type: 2,
+    title: "Pharmacy Owner",
     imageUrl: "/images/shop-representation.png",
   },
 ];
@@ -25,7 +28,10 @@ export default function AuthTypeSelection(props: AuthTypeSelectionProps) {
         {types.map((type, i) => (
           <button
             key={i}
-            className="bg-front bg-opacity-10 rounded-[2.5rem] flex items-center overflow-hidden group"
+            onClick={() => {
+              props.setType(type.type);
+            }}
+            className="bg-front bg-opacity-10 rounded-[2.5rem] flex items-center overflow-hidden group animate-[grow_800ms]"
           >
             <img
               src={type.imageUrl}
