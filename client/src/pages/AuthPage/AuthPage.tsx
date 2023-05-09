@@ -13,7 +13,7 @@ export default function AuthPage() {
             src="/images/documents-stash.webp"
             alt="docs"
             draggable={false}
-            className="drop-shadow-lg aspect-square max-h-[80vh]"
+            className="drop-shadow-lg aspect-square max-h-[80vh] max-w-[80vh]"
           />
         </div>
         <div className="basis-1/2 h-full flex flex-col justify-center">

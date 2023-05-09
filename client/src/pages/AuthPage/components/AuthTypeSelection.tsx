@@ -35,7 +35,8 @@ export default function AuthTypeSelection(props: AuthTypeSelectionProps) {
           >
             <img
               src={type.imageUrl}
-              alt=""
+              alt={type.title}
+              draggable={false}
               className="w-40 aspect-square saturate-0 duration-500 group-hover:saturate-100"
             />
             <p className="pl-4 pr-8 text-2xl font-raleway group-hover:text-primary">
